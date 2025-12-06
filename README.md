@@ -33,7 +33,7 @@ Finally, TS emits:
 
 
 # Lecture-3 : Setup
-- [X post](https://x.com/gauravkmaurya09/status/1996994861914866688?s=20)
+- [X post](https://x.com/gauravkmaurya09/status/1997349011788059002?s=20)
 # Summary
 - Initialize a new project with npm init -y 
 - Install TypeScript as a development dependency
@@ -48,3 +48,27 @@ npx tsc --init
 ```
 - Update tsconfig.json to set rootDir and outDir
 - Create src directory for TypeScript files and dist directory for compiled JavaScript files
+
+
+## Lecture-4 : Type Annotations and Inference in TypeScript
+- [X post](https://x.com/gauravkmaurya09/status/1997351378793218293?s=20)
+# Summary
+- Type Annotations
+  - mai bataunga ki variable/function/parameter ka type kya hoga
+  - Example: 
+    ```typescript
+    let age: number = 25;
+    function greet(name: string): string {
+      return `Hello, ${name}!`;
+    }
+    ```
+- Type Inference
+  - mai apne aap hi samjh jaunga ki variable/function/parameter ka type kya hoga
+  - Example:
+    ```typescript
+    let age = 25; // TypeScript infers age as number
+    function greet(name) {
+      return `Hello, ${name}!`; // TypeScript infers name as string
+    }
+    ```
+
