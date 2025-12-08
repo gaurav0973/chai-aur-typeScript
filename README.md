@@ -73,7 +73,7 @@ npx tsc --init
     ```
 
 ## Lecture-5 : Union and Any 
-- [X post](https://x.com/gauravkmaurya09/status/1997353748737977093?s=20)
+- [X post](https://x.com/gauravkmaurya09/status/1997951693523485013?s=20)
 # Summary
 - Union Types
   - A variable can hold multiple types
