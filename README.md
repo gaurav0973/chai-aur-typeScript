@@ -72,3 +72,23 @@ npx tsc --init
     }
     ```
 
+## Lecture-5 : Union and Any 
+- [X post](https://x.com/gauravkmaurya09/status/1997353748737977093?s=20)
+# Summary
+- Union Types
+  - A variable can hold multiple types
+  - Example:
+    ```typescript
+    let value: string | number;
+    value = "Hello"; // valid
+    value = 42;      // valid
+    ```
+- Any Type
+  - A variable can hold any type, disabling type checking
+  - Example:
+    ```typescript
+    let data: any;
+    data = "Hello"; // valid
+    data = 42;      // valid
+    data = true;    // valid
+    ```
