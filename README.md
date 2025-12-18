@@ -128,3 +128,45 @@ npx tsc --init
       }
     }
     ```
+
+## Lecture-7 : Type Assertions/ any vs unknown/try-catch/never
+- [X post](https://x.com/gauravkmaurya09/status/2002264862634867712?s=20)
+# Summary
+- Type Assertions
+  - Telling the compiler to treat a variable as a specific type
+  - Example:
+    ```typescript
+    let someValue: any = "Hello, TypeScript!";
+    let strLength: number = (someValue as string).length;
+    ```
+- Any vs Unknown
+  - Any: Disables type checking, can be assigned to any type
+  - Unknown: Safer alternative to any, requires type checking before use
+  
+- Try-Catch
+  - Example:
+    ```typescript
+    try {
+    } catch (error) {
+      if (error instanceof Error) {
+        console.log(error.message);
+      }
+    }
+    ```
+- Never Type
+  - Represents values that never occur, such as functions that always throw errors or infinite loops
+  - Example:
+    ```typescript
+    type Role = "admin" | "user";
+    function redirectToRole(role: Role): never {
+      if (role === "admin") {
+        console.log("Redirect to admin dashboard");
+        return;
+      }
+      if (role === "user") {
+        console.log("Redirect to user dashboard");
+        return;
+      }
+      throw new Error("Invalid role");
+    }
+    ```

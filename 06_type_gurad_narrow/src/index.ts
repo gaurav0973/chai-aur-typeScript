@@ -1,62 +1,52 @@
-// Type narrowing
-function getChai(kind : string | number){
-    if(typeof kind === 'string'){
-        return `Making a cup of ${kind} chai....`
+//1. Type Assertion
+let responce:any = "43"
+
+let numericLength:number = (responce as string).length
+
+type Book = {
+    name:string
+}
+let BookString = '{"name":"Learn TypeScript"}'
+let bookObject = JSON.parse(BookString) as Book
+console.log(bookObject.name)
+
+
+// 2. any and unknown
+let value:any
+value = true
+value = "Hello"
+value = 42
+value.toUpperCase() // No Error
+
+let newValue:unknown
+newValue = true
+newValue = "Hello"
+newValue = 42
+// newValue.toUpperCase() // Error
+
+
+// 3. try-catch Error Handling
+
+
+try {
+    
+} catch (error) {
+    if(error instanceof Error){
+        console.log(error.message)
     }
-    return `Chai Order number is ${kind}....`
+    console.log("Error ", error)
 }
 
-
-function servingChai(msg?: string){
-    if(msg){
-        return `Serving: ${msg}`
+// 4. type never
+type Role = "admin" | "user"
+function redirectToRole(role:Role){
+    if(role === "admin"){
+        console.log("Redirect to admin dashboard")
+        return
     }
-    return `Serving: default chai`
-}
-
-function orderChai(size: 'small' | 'medium' | 'large' | number){
-    if(size === 'small')
-        return 'Chai size is small'
-    if(size === 'medium')
-        return 'Chai size is medium'
-    if(size === 'large')
-        return 'Chai size is large'
-    return `Chai size code is ${size}`
-}
-
-
-class KulhadChai{
-    serveChai(){
-        return 'Serving chai in kulhad'
+    if(role === "user"){
+        console.log("Redirect to user dashboard")
+        return
     }
-}
-class GlassChai{
-    serveChai(){
-        return 'Serving chai in glass'
-    }
-}
-
-function prepareChai(chai: KulhadChai | GlassChai){
-    if(chai instanceof KulhadChai){
-        return chai.serveChai()
-    }
-    return chai.serveChai()
-}
-
-// type guard function
-type ChaiOrder = {
-    type : 'String'
-    sugar : number
-}
-function isChaiOrder(obj:any): obj is ChaiOrder{
-    return (
-        typeof obj === 'object' && obj !== null && obj.type === 'String' && typeof obj.sugar === 'number'
-    )
-}
-
-function serveOrder(item : ChaiOrder | string){
-    if(isChaiOrder(item)){
-        return `Serving chai with ${item.sugar} spoons of sugar`
-    }
-    return `Serving order: ${item}`
+    role // Type 'never'
 }
