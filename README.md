@@ -92,3 +92,39 @@ npx tsc --init
     data = 42;      // valid
     data = true;    // valid
     ```
+
+## Lecture-6 : Type Narrowing and Type Guards
+- [X post](https://x.com/gauravkmaurya09/status/2001650052612395068?s=20)
+# Summary
+- Type Narrowing
+  - The process of refining a variable's type based on runtime checks
+  - Example:
+    ```typescript
+    function process(value: string | number) {
+      if (typeof value === "string") {
+        // Here, TypeScript knows value is a string
+        console.log(value.toUpperCase());
+      } else {
+        // Here, TypeScript knows value is a number
+        console.log(value.toFixed(2));
+      }
+    }
+    ```
+- Type Guards
+  - Functions or expressions that perform runtime checks to narrow types
+  - Example:
+    ```typescript
+    function isString(value: any): value is string {
+      return typeof value === "string";
+    }
+
+    function process(value: string | number) {
+      if (isString(value)) {
+        // Here, TypeScript knows value is a string
+        console.log(value.toUpperCase());
+      } else {
+        // Here, TypeScript knows value is a number
+        console.log(value.toFixed(2));
+      }
+    }
+    ```
