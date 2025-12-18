@@ -142,7 +142,7 @@ npx tsc --init
 - Any vs Unknown
   - Any: Disables type checking, can be assigned to any type
   - Unknown: Safer alternative to any, requires type checking before use
-  
+
 - Try-Catch
   - Example:
     ```typescript
@@ -169,4 +169,29 @@ npx tsc --init
       }
       throw new Error("Invalid role");
     }
+    ```
+
+## Lecture-8 : Types and Interfaces
+- [X post](https://x.com/gauravkmaurya09/status/2002879614864862724?s=20)
+# Summary
+- Types
+- Interfaces
+- Differences between Types and Interfaces
+   - Types can represent primitive types, union types, and tuples, while interfaces are primarily used for defining object shapes.
+    - Interfaces support declaration merging, allowing multiple declarations with the same name to be combined, while types do not support this feature.
+    - Types can use advanced features like mapped types and conditional types, which are not available with interfaces.
+- When to use Types vs Interfaces
+    - Use interfaces when defining the shape of objects, especially when you expect to extend or implement them.
+    - Use types for more complex type definitions, such as unions, intersections, and tuples.
+- & and optional properties
+   - Example:
+    ```typescript
+    interface Person {
+      name: string;
+      age?: number; // optional property
+    }
+
+    type Employee = Person & {
+      employeeId: number;
+    };
     ```
