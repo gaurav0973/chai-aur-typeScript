@@ -195,3 +195,64 @@ npx tsc --init
       employeeId: number;
     };
     ```
+
+## Lecture-9 : Objects in TypeScript
+- [X post](https://x.com/gauravkmaurya09/status/2003494372089734912?s=20)
+# Summary
+- Defining Object Types
+  - Using interfaces and type aliases to define the shape of objects
+  - Example:
+    ```typescript
+    interface Person {
+      name: string;
+      age: number;
+    }
+
+    const john: Person = {
+      name: "John",
+      age: 30,
+    };
+    ```
+- Satisft the bare minimum requirement
+  - Example:
+    ```typescript
+    interface Person {
+      name: string;
+      age: number;
+    }
+
+    const jane: Person = {
+      name: "Jane",
+      age: 25,
+      address: "123 Main St", // Extra property is allowed
+    };
+    ```
+-  Partial/ Required /Pick/ Omit
+  - Example:
+    ```typescript
+    interface Person {
+      name: string;
+      age: number;
+      address: string;
+    }
+
+    const partialPerson: Partial<Person> = {
+      name: "Alice",
+    };
+
+    const requiredPerson: Required<Person> = {
+      name: "Bob",
+      age: 40,
+      address: "456 Elm St",
+    };
+
+    const pickedPerson: Pick<Person, "name" | "age"> = {
+      name: "Charlie",
+      age: 35,
+    };
+
+    const omittedPerson: Omit<Person, "address"> = {
+      name: "David",
+      age: 28,
+    };
+    ```
