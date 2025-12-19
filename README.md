@@ -256,3 +256,38 @@ npx tsc --init
       age: 28,
     };
     ```
+
+## Lecture-10 : Functions in TypeScript
+- [X post](https://x.com/gauravkmaurya09/status/2004109126627987456?s=20)
+# Summary
+- Function Types
+  - Defining parameter and return types for functions
+  - Example:
+    ```typescript
+    function add(a: number, b: number): number {
+      return a + b;
+    }
+    ```
+- Optional and Default Parameters
+  - Example:
+    ```typescript
+    function greet(name: string, greeting: string = "Hello"): string {
+      return `${greeting}, ${name}!`;
+    }
+    ```
+- Rest Parameters
+  - Example:
+    ```typescript
+    function sum(...numbers: number[]): number {
+      return numbers.reduce((acc, curr) => acc + curr, 0);
+    }
+    ```
+- Function Overloading
+  - Example:
+    ```typescript
+    function combine(a: string, b: string): string;
+    function combine(a: number, b: number): number;
+    function combine(a: any, b: any): any {
+      return a + b;
+    }
+    ```
