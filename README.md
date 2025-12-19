@@ -291,3 +291,32 @@ npx tsc --init
       return a + b;
     }
     ```
+
+## Lecture-11 : Arrays, Tuples, Enums in TypeScript
+- [X post](https://x.com/gauravkmaurya09/status/2004723882167122176?s=20)
+# Summary
+- Arrays
+  - Defining arrays with specific element types
+  - Example:
+    ```typescript
+    let numbers: number[] = [1, 2, 3];
+    let strings: Array<string> = ["a", "b", "c"];
+    ```
+- Tuples
+  - Fixed-length arrays with specific types for each element
+  - Example:
+    ```typescript
+    let person: [string, number] = ["Alice", 30];
+    ```
+- Enums
+  - Defining a set of named constants
+  - Example:
+    ```typescript
+    enum Color {
+      Red,
+      Green,
+      Blue,
+    }
+
+    let favoriteColor: Color = Color.Green;
+    ```
